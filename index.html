@@ -52,8 +52,8 @@
         /* スクロール時のフェードインアニメーション */
         .fade-in-target {
             opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            transform: translateY(30px);
+            transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
         }
 
         .fade-in {
@@ -72,7 +72,7 @@
         <p>そして　今後とも2人のことをよろしくお願いいたします</p>
         <p>支えてくださった皆さんに感謝の気持ちを伝えたくて　この日 この場を設けさせていただきました</p>
         <p>また　私たちの大切な日を実現するために　献身的にサポートしてくださった方がいます</p>
-        <p>最後の謎を解いて　その方と新郎新婦の3ショットを撮るのを手伝ってください</p>
+        <p>最後の謎を解いて　その方と新郎新婦の3ショットを撮るのを手伝って欲しいです</p>
     </div>
 
     <h2 class="last-mystery fade-in-target">LAST MYSTERY</h2>
@@ -82,7 +82,7 @@
     </div>
 
     <div class="footer fade-in-target">
-        <p>Our story continues...</p>
+        <p>OUR STORY CONTINUES＜/p>
     </div>
 
     <script>
@@ -90,10 +90,12 @@
             const elements = document.querySelectorAll('.fade-in-target');
             const windowHeight = window.innerHeight;
             
-            elements.forEach(el => {
+            elements.forEach((el, index) => {
                 const rect = el.getBoundingClientRect();
-                if (rect.top < windowHeight * 0.9) {
-                    el.classList.add('fade-in');
+                if (rect.top < windowHeight * 0.85) {
+                    setTimeout(() => {
+                        el.classList.add('fade-in');
+                    }, index * 200 + Math.random() * 600); // 0.2s〜0.8s のランダム遅延
                 }
             });
         }
