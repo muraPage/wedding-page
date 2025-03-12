@@ -48,13 +48,25 @@
             font-style: italic;
             color: #666;
         }
+
+        /* スクロール時のフェードインアニメーション */
+        .fade-in-target {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
 
-    <h1 class="title">SECRET SITE</h1>
+    <h1 class="title fade-in-target">SECRET SITE</h1>
 
-    <div class="content">
+    <div class="content fade-in-target">
         <p>このページは 2人のことを題材にしたクロスワードを解き明かした方だけが辿り着けるサイトです</p>
         <p>改めてこれまで関わっていただいたこと　私たちの結婚式に参列していただいたこと　感謝申し上げます</p>
         <p>そして　今後とも2人のことをよろしくお願いいたします</p>
@@ -63,16 +75,32 @@
         <p>最後の謎を解いて　その方と新郎新婦の3ショットを撮るのを手伝って欲しいです</p>
     </div>
 
-    <h2 class="last-mystery">LAST MYSTERY</h2>
+    <h2 class="last-mystery fade-in-target">LAST MYSTERY</h2>
 
-    <div class="mystery-section">
-        <!-- ここに謎解きを追加 -->
+    <div class="mystery-section fade-in-target">
         <p>謎解きコンテンツが入ります（未完成）</p>
     </div>
 
-    <div class="footer">
+    <div class="footer fade-in-target">
         <p>Our story continues...</p>
     </div>
+
+    <script>
+        function fadeInOnScroll() {
+            const elements = document.querySelectorAll('.fade-in-target');
+            const windowHeight = window.innerHeight;
+            
+            elements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < windowHeight * 0.9) {
+                    el.classList.add('fade-in');
+                }
+            });
+        }
+
+        document.addEventListener("scroll", fadeInOnScroll);
+        window.addEventListener("load", fadeInOnScroll);
+    </script>
 
 </body>
 </html>
