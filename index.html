@@ -8,16 +8,27 @@
         /* ページ全体の設定 */
         body {
             font-family: "Arial", sans-serif;
-            background-color: #ffffff; /* 背景は白 */
+            background-color: #f3e5f5; /* 薄い紫色 */
             text-align: center;
-            padding: 0;
+            padding: 20px;
             margin: 0;
+        }
+
+        /* ページ全体を金色の枠で囲む */
+        .wrapper {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            border: 5px solid gold; /* 金色の枠 */
+            background-color: white; /* 内側を白く */
+            border-radius: 15px; /* 角を少し丸く */
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.5); /* 金色っぽい影 */
         }
 
         /* ヘッダー画像 */
         .header {
-            width: 100%; /* 横幅をページいっぱいに */
-            height: auto; /* 画像の比率を維持 */
+            width: 100%;
+            height: auto;
         }
 
         /* フッター画像 */
@@ -37,11 +48,11 @@
 
         /* メインコンテンツ */
         .content {
-            font-size: 15px;
+            font-size: 20px;
             line-height: 1.8;
             max-width: 800px;
             margin: 40px auto;
-            text-align: center; /* 全文を中央揃え */
+            text-align: center;
         }
 
         .content p {
@@ -77,32 +88,34 @@
 </head>
 <body>
 
-    <!-- ヘッダー画像 -->
-    <img src="images/Picture.svg" alt="ヘッダー画像" class="header">
+    <div class="wrapper">
+        <!-- ヘッダー画像 -->
+        <img src="images/Picture.svg" alt="ヘッダー画像" class="header">
 
-    <div class="content">
-        <h1>SECRET SITE</h1>
-        <p>このページは 2人のことを題材にした<br>クロスワードを解き明かした方だけが<br>辿り着けるサイトです</p>
-        <p>改めて　これまで関わっていただいたこと　<br>私たちの結婚式に参列していただいたこと　<br>心より感謝申し上げます</p>
-        <p>今後とも　<br>2人のことをよろしくお願いいたします</p>
-        <p>支えてくださった皆さんに<br>感謝の気持ちを伝えたくて<br>この場を設けさせていただきました</p>
-        <p>そして　私たちの大切な日を実現するために<br>献身的にサポートしてくださった方がいます</p>
-        <p>最後の謎を解いて<br>その方と新郎新婦の3ショットを撮るのを<br>手伝って欲しいです</p>
+        <div class="content">
+            <h1>SECRET SITE</h1>
+            <p>このページは 2人のことを題材にした<br>クロスワードを解き明かした方だけが<br>辿り着けるサイトです</p>
+            <p>改めて　これまで関わっていただいたこと<br>私たちの結婚式に参列していただいたこと<br>心より感謝申し上げます</p>
+            <p>今後とも<br>2人のことをよろしくお願いいたします</p>
+            <p>支えてくださった皆さんに<br>感謝の気持ちを伝えたくて<br>この場を設けさせていただきました</p>
+            <p>私たちの大切な日を実現するために<br>献身的にサポートしてくださった方がいます</p>
+            <p>最後の謎を解いて<br>その方と新郎新婦の3ショットを撮るのを<br>手伝って欲しいです</p>
+        </div>
+
+        <h2 class="last-mystery">LAST MYSTERY</h2>
+
+        <div class="mystery-section">
+            <!-- ここに謎解きを追加 -->
+            <p>謎解きコンテンツが入ります（未完成）</p>
+        </div>
+
+        <div class="bottom-text">
+            <p>Our story continues...</p>
+        </div>
+
+        <!-- フッター画像 -->
+        <img src="images/Picture.svg" alt="フッター画像" class="footer">
     </div>
-
-    <h2 class="last-mystery">LAST MYSTERY</h2>
-
-    <div class="mystery-section">
-        <!-- ここに謎解きを追加 -->
-        <p>謎解きコンテンツが入ります（未完成）</p>
-    </div>
-
-    <div class="bottom-text">
-        <p>Our story continues...</p>
-    </div>
-
-    <!-- フッター画像 -->
-    <img src="images/Picture.svg" alt="フッター画像" class="footer">
 
 </body>
 </html>
