@@ -5,27 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SECRET SITE</title>
     <style>
+        /* ページ全体の設定 */
         body {
             font-family: "Arial", sans-serif;
-            background-color: #f8f8f8;
+            background-color: #ffffff; /* 背景は白 */
             text-align: center;
-            padding: 40px;
+            padding: 0;
+            margin: 0;
         }
 
-        .title {
-            font-size: 36px;
-            font-weight: bold;
-            font-family: "Arial Black", sans-serif;
+        /* ヘッダー画像 */
+        .header {
+            width: 100%; /* 横幅をページいっぱいに */
+            height: auto; /* 画像の比率を維持 */
         }
 
+        /* フッター画像 */
+        .footer {
+            width: 100%;
+            height: auto;
+            margin-top: 40px;
+        }
+
+        /* メインコンテンツ */
         .content {
             font-size: 18px;
             line-height: 1.8;
             max-width: 800px;
-            margin: 0 auto;
+            margin: 40px auto;
             text-align: left;
         }
 
+        /* LAST MYSTERY のデザイン */
         .last-mystery {
             font-size: 32px;
             font-weight: bold;
@@ -33,6 +44,7 @@
             font-family: "Arial Black", sans-serif;
         }
 
+        /* 謎解きコンテンツの枠 */
         .mystery-section {
             font-size: 20px;
             margin-top: 20px;
@@ -42,67 +54,43 @@
             background-color: white;
         }
 
-        .footer {
+        /* 最下部のメッセージ */
+        .bottom-text {
             margin-top: 60px;
             font-size: 16px;
             font-style: italic;
             color: #666;
         }
-
-        /* スクロール時のフェードインアニメーション */
-        .fade-in-target {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
-        }
-
-        .fade-in {
-            opacity: 1;
-            transform: translateY(0);
-        }
     </style>
 </head>
 <body>
 
-    <h1 class="title fade-in-target">SECRET SITE</h1>
+    <!-- ヘッダー画像 -->
+    <img src="images/header.png" alt="ヘッダー画像" class="header">
 
-    <div class="content fade-in-target">
-        <p>このページは 2人のことを題材にしたクロスワードを解き明かした方だけが辿り着けるサイトです</p>
-        <p>改めてこれまで関わっていただいたこと　私たちの結婚式に参列していただいたこと　感謝申し上げます</p>
-        <p>そして　今後とも2人のことをよろしくお願いいたします</p>
-        <p>支えてくださった皆さんに感謝の気持ちを伝えたくて　この日 この場を設けさせていただきました</p>
-        <p>また　私たちの大切な日を実現するために　献身的にサポートしてくださった方がいます</p>
-        <p>最後の謎を解いて　その方と新郎新婦の3ショットを撮るのを手伝って欲しいです</p>
+    <div class="content">
+        <h1>SECRET SITE</h1>
+        <p>このページは 2人のことを題材にしたクロスワードを解き明かした方だけが辿り着けるサイトです。</p>
+        <p>改めてこれまで関わっていただいたこと、私たちの結婚式に参列していただいたこと、感謝申し上げます。</p>
+        <p>そして今後とも2人のことをよろしくお願いいたします。</p>
+        <p>支えてくださった皆さんに感謝の気持ちを伝えたくて、この日 この場を設けさせていただきました。</p>
+        <p>私たちの大切な日を実現するために献身的にサポートしてくださった方がいます。</p>
+        <p>最後の謎を解いて、その方と新郎新婦の3ショットを撮るのを手伝って欲しいです。</p>
     </div>
 
-    <h2 class="last-mystery fade-in-target">LAST MYSTERY</h2>
+    <h2 class="last-mystery">LAST MYSTERY</h2>
 
-    <div class="mystery-section fade-in-target">
+    <div class="mystery-section">
+        <!-- ここに謎解きを追加 -->
         <p>謎解きコンテンツが入ります（未完成）</p>
     </div>
 
-    <div class="footer fade-in-target">
-        <p>OUR STORY CONTINUES </p>
+    <div class="bottom-text">
+        <p>Our story continues...</p>
     </div>
 
-    <script>
-        function fadeInOnScroll() {
-            const elements = document.querySelectorAll('.fade-in-target');
-            const windowHeight = window.innerHeight;
-            
-            elements.forEach((el, index) => {
-                const rect = el.getBoundingClientRect();
-                if (rect.top < windowHeight * 0.85) {
-                    setTimeout(() => {
-                        el.classList.add('fade-in');
-                    }, index * 200 + Math.random() * 600); // 0.2s〜0.8s のランダム遅延
-                }
-            });
-        }
-
-        document.addEventListener("scroll", fadeInOnScroll);
-        window.addEventListener("load", fadeInOnScroll);
-    </script>
+    <!-- フッター画像 -->
+    <img src="images/footer.png" alt="フッター画像" class="footer">
 
 </body>
 </html>
