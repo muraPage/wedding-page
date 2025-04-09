@@ -1,0 +1,63 @@
+# 不正解時の表示ページ：大きく「残念！あと◯問！」と表示＋正解数＋協力メッセージ
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>結果</title>
+  <style>
+    body {
+      background-color: #e3f2fd;
+      color: #1565c0;
+      font-family: "Arial", sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      animation: fadeIn 1s ease-out;
+    }
+
+    h1 {
+      font-size: 64px;
+      margin: 20px 0 10px 0;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 20px;
+      color: #333;
+      font-style: italic;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <h1>残念！</h1>
+  <h2 id="remaining">あと◯問！</h2>
+  <p id="score-text">正解数：? / 10</p>
+  <p>他のメンバーと協力してね</p>
+
+  <script>
+    // URLパラメータから正解数を取得し表示
+    const params = new URLSearchParams(window.location.search);
+    const correct = parseInt(params.get("correct")) || 0;
+    const remaining = 10 - correct;
+
+    document.getElementById("remaining").textContent = `あと${remaining}問！`;
+    document.getElementById("score-text").textContent = `正解数：${correct} / 10`;
+  </script>
+</body>
+</html>
